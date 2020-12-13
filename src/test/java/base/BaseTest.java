@@ -15,10 +15,10 @@ public class BaseTest {
 //        driver.get(baseURL);
 //    }
 
-    @AfterMethod
-    public void tearDown(){
-        WebDriverFactory.getInstance().quitDriver();
-    }
+//    @AfterMethod
+//    public void tearDown(){
+//        WebDriverFactory.getInstance().quitDriver();
+//    }
 
 
 }//end class

@@ -33,7 +33,7 @@ public class BasePage {
 
 
 
-    protected void findElement(By locator){
+    protected WebElement findElement(By locator){
         WebElement element = null;
         try {
             wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -48,6 +48,7 @@ public class BasePage {
             logger.info("FAILED - Element could not be found By locator [" +locator.toString()+ "] in specified time.");
             e.printStackTrace();
         }
+        return element;
     }
 
 

@@ -21,7 +21,7 @@ public class SearchMenu extends BasePage{
     By categoryVisa = By.cssSelector("a[data-name='visa']");
 
     public void clickFlights(){
-        genericLocator(3,"a[data-name='flights']", "//a[@class='text-center flights ']").click();
+        findElement(categoryFlights).click();
     }
 
 
