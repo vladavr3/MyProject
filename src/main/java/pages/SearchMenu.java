@@ -4,13 +4,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.asserts.SoftAssert;
 
 public class SearchMenu extends BasePage{
 
-
-    public SearchMenu(WebDriver driver) {
-        super(driver);
-    }
+    public SearchMenu(WebDriver driver) { super(driver);}
 
     private static final Logger logger = LogManager.getLogger(SearchMenu.class.getName());
 
@@ -22,8 +20,9 @@ public class SearchMenu extends BasePage{
     By categoryCars = By.cssSelector("a[data-name='cars']");
     By categoryVisa = By.cssSelector("a[data-name='visa']");
 
-
-
+    public void clickFlights(){
+        genericLocator(3,"a[data-name='flights']", "//a[@class='text-center flights ']").click();
+    }
 
 
 
