@@ -40,12 +40,15 @@ public class BasePage {
             logger.info("PASSED - Locator " + element.toString() + " has been found");
         }catch (TimeoutException e){
             logger.info("FAILED - Element could not be found By locator [" +locator.toString()+ "] in specified time.");
+            softAssert.fail();
             e.printStackTrace();
         }catch (NoSuchElementException e){
             logger.info("FAILED - Element could not be found By locator [" +locator.toString()+ "] in specified time.");
+            softAssert.fail();
             e.printStackTrace();
         }catch (Exception e){
             logger.info("FAILED - Element could not be found By locator [" +locator.toString()+ "] in specified time.");
+            softAssert.fail();
             e.printStackTrace();
         }
         return element;

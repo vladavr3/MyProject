@@ -9,10 +9,10 @@ public class BaseTest {
     public WebDriver driver;
 
 
-//    @AfterMethod
-//    public void tearDown(){
-//        WebDriverFactory.getInstance().quitDriver();
-//    }
+    @AfterMethod
+    public void tearDown(){
+        WebDriverFactory.getInstance().quitDriver();
+    }
 
 
 }//end class

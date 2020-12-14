@@ -16,8 +16,9 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Root level="trace">
+        <Root level="all">
             <AppenderRef ref="File"/>
+            <AppenderRef ref="Console"/>
         </Root>
 <!--        <Logger name="./core.pages" level="info" additivity="false">-->
 <!--            <AppenderRef ref="File"/>-->
