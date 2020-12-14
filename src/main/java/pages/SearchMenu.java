@@ -20,6 +20,12 @@ public class SearchMenu extends BasePage{
     By categoryCars = By.cssSelector("a[data-name='cars']");
     By categoryVisa = By.cssSelector("a[data-name='visa']");
 
+    By destinationField = By.cssSelector(".select2-container.form-control.hotelsearch.locationlistHotels");
+    By inputDestination = By.xpath("//div[@id='select2-drop-mask']/following-sibling::div/div/input");
+    By selectCheckIn = By.cssSelector("input[id='checkin']");
+    By selectCheckOut = By.cssSelector("input[id='checkout']");
+    By dropdownResult = By.cssSelector(".select2-result-label");
+
     public SearchMenu clickFlights(){
         findElement(categoryFlights).click();
         return this;
@@ -34,6 +40,30 @@ public class SearchMenu extends BasePage{
         findElement(categoryRentals).click();
         return this;
     }
+
+    public SearchMenu clickHotels(){
+        findElement(categoryHotels).click();
+        return this;
+    }
+
+    public SearchMenu selectDestination(){
+        clickWhenReady(destinationField);
+        typeIn(inputDestination,"ist");
+        clickRandomElement(dropdownResult);
+        return this;
+    }
+
+    public SearchMenu checkIn(){
+        clickWhenReady(selectCheckIn);
+        return this;
+    }
+
+    public SearchMenu checkOut(){
+        return this;
+    }
+
+
+
 
 
 
