@@ -7,13 +7,7 @@ import org.testng.asserts.SoftAssert;
 public class BaseTest {
 
     public WebDriver driver;
-    protected String baseURL;
 
-//    @BeforeMethod(alwaysRun = true)
-//    public void setup(){
-//        baseURL = Constants.URL;
-//        driver.get(baseURL);
-//    }
 
 //    @AfterMethod
 //    public void tearDown(){

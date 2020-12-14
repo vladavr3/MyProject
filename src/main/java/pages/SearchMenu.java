@@ -20,8 +20,19 @@ public class SearchMenu extends BasePage{
     By categoryCars = By.cssSelector("a[data-name='cars']");
     By categoryVisa = By.cssSelector("a[data-name='visa']");
 
-    public void clickFlights(){
+    public SearchMenu clickFlights(){
         findElement(categoryFlights).click();
+        return this;
+    }
+
+    public SearchMenu clickBoats(){
+        findElement(categoryBoats).click();
+        return this;
+    }
+
+    public SearchMenu clickRentals(){
+        findElement(categoryRentals).click();
+        return this;
     }
 
 

@@ -8,7 +8,7 @@
             <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %c{2} -%msg%n"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
-                <SizeBasedTriggeringPolicy size="100 KB"/>
+                <SizeBasedTriggeringPolicy size="5 MB"/>
             </Policies>
         </RollingFile>
         <Console name="Console">
@@ -16,11 +16,11 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Root level="Info">
+        <Root level="trace">
             <AppenderRef ref="File"/>
         </Root>
-        <!--<Logger name="com.letskodeit.overview" level="info" additivity="false">
-            <AppenderRef ref="File"/>
-        </Logger>-->
+<!--        <Logger name="./core.pages" level="info" additivity="false">-->
+<!--            <AppenderRef ref="File"/>-->
+<!--        </Logger>&ndash;&gt;-->
     </Loggers>
 </Configuration>

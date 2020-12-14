@@ -3,7 +3,6 @@ package pages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ByIdOrName;
 import org.openqa.selenium.support.pagefactory.ByAll;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -38,6 +37,7 @@ public class BasePage {
         try {
             wait.until(ExpectedConditions.presenceOfElementLocated(locator));
             element = driver.findElement(locator);
+            logger.info("PASSED - Locator " + element.toString() + " has been found");
         }catch (TimeoutException e){
             logger.info("FAILED - Element could not be found By locator [" +locator.toString()+ "] in specified time.");
             e.printStackTrace();

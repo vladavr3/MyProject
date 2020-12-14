@@ -21,8 +21,10 @@ public class SearchMenuTest extends BaseTest {
 
     @Test
     public void testMethod(){
-        searchMenu.clickFlights();
-        searchMenu.softAssert.assertAll();
+        searchMenu.clickFlights()
+                .clickRentals()
+                .clickBoats()
+                .softAssert.assertAll();
     }
 
 
