@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -35,6 +37,29 @@ public class BasePage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public WebElement genericLocator(By...locators) {
+
+       List<By> elements = new ArrayList<>(Arrays.asList(locators));
+        for (int i=0; i<elements.size(); i++){
+            try {
+                new WebDriverWait(driver,3).until(ExpectedConditions.presenceOfElementLocated(elements.get(i)));
+                    logger.info("Element found by: " + elements.get(i).toString());
+                    return driver.findElement(elements.get(i));
+            }catch (NoSuchElementException noElement){
+                noElement.printStackTrace();
+                logger.info("Element not found by locator: " + elements.get(i).toString());
+            }catch (TimeoutException timeoutException){
+                timeoutException.printStackTrace();
+                logger.info("Element not found by locator: " + elements.get(i).toString());
+            }catch (Exception generalException){
+                generalException.printStackTrace();
+                logger.info("Element not found by locator: " + elements.get(i).toString());
+            }
+
+        }
+        return null;
     }
 
     protected WebElement findElement(By locator){

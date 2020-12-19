@@ -12,7 +12,10 @@ public class SearchMenu extends BasePage{
 
     private static final Logger logger = LogManager.getLogger(SearchMenu.class.getName());
 
-    By categoryHotels = By.cssSelector("a[data-name='hotels']");
+    By categoryHotels = By.cssSelector("a[data-name='hotels''");
+    By getCategoryHotels2 = By.cssSelector("text-center hotels active");
+    By getCategoryHotels3 = By.xpath("//a[@class='text-center hotels active']");
+
     By categoryFlights = By.cssSelector("a[data-name='flights']");
     By categoryBoats = By.cssSelector("a[data-name='boats']");
     By categoryRentals = By.cssSelector("a[data-name='rentals']");
@@ -42,7 +45,8 @@ public class SearchMenu extends BasePage{
     }
 
     public SearchMenu clickHotels(){
-        findElement(categoryHotels).click();
+        //findElement(categoryHotels).click();
+        genericLocator(categoryHotels, getCategoryHotels2, getCategoryHotels3).click();
         return this;
     }
 
