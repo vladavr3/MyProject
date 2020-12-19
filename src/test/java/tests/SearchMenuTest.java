@@ -4,6 +4,7 @@ import core.Constants;
 import base.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pages.BasePage;
 import pages.SearchMenu;
 
 public class SearchMenuTest extends BaseTest {

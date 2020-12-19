@@ -5,10 +5,10 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
-
 public class SearchMenu extends BasePage{
 
     public SearchMenu(WebDriver driver) { super(driver);}
+
 
     private static final Logger logger = LogManager.getLogger(SearchMenu.class.getName());
 
