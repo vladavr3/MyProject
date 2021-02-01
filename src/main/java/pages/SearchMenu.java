@@ -12,7 +12,7 @@ public class SearchMenu extends BasePage{
 
     private static final Logger logger = LogManager.getLogger(SearchMenu.class.getName());
 
-    By categoryHotels = By.cssSelector("a[data-name='hotels''");
+    By categoryHotels = By.cssSelector("a[data-name='hotels''"); //false locator
     By getCategoryHotels2 = By.cssSelector("text-center hotels active");
     By getCategoryHotels3 = By.xpath("//a[@class='text-center hotels active']");
 
