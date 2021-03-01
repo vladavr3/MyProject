@@ -3,18 +3,22 @@ package pages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 public class SearchMenu extends BasePage{
 
     public SearchMenu(WebDriver driver) { super(driver);}
 
-
     private static final Logger logger = LogManager.getLogger(SearchMenu.class.getName());
+
+    JavascriptExecutor js = (JavascriptExecutor)driver;
 
     By categoryHotels = By.cssSelector("a[data-name='hotels''"); //false locator
     By getCategoryHotels2 = By.cssSelector("text-center hotels active");
     By getCategoryHotels3 = By.xpath("//a[@class='text-center hotels active']");
+
 
     By categoryFlights = By.cssSelector("a[data-name='flights']");
     By categoryBoats = By.cssSelector("a[data-name='boats']");
@@ -47,6 +51,7 @@ public class SearchMenu extends BasePage{
     public SearchMenu clickHotels(){
         //findElement(categoryHotels).click();
         genericLocator(categoryHotels, getCategoryHotels2, getCategoryHotels3).click();
+        //findElementByJS("document.querySelector(\"a[data-name='hotels']\")").click();
         return this;
     }
 

@@ -39,6 +39,8 @@ public class BasePage {
         }
     }
 
+
+
     public WebElement genericLocator(By...locators) {
 
        List<By> elements = new ArrayList<>(Arrays.asList(locators));
@@ -61,6 +63,8 @@ public class BasePage {
         }
         return null;
     }
+
+
 
     protected WebElement findElement(By locator){
         WebElement element = null;
@@ -100,6 +104,14 @@ public class BasePage {
         }
         return null;
     }
+
+    protected WebElement findElementByJS(String querySelector){
+        //js.executeScript("document.querySelector(\"a[data-name='hotels']\").click()"); klik na element sa JS
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        WebElement element = (WebElement)js.executeScript(querySelector);
+        return element;
+    }
+
 
 
     protected void clickWhenReady(By locator) {
